@@ -79,7 +79,7 @@ export const StorkenStorage = (storken, generalStorage) => {
     }
   })
 
-  return funcs
+  return Funcs
 }
 
 export default StorkenStorage
