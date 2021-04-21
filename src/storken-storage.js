@@ -44,10 +44,7 @@ export const StorkenStorage = (storken, generalStorage) => {
       }
     },
     clear: async (key, remove, reset = true) => {
-      const stork = storken.getStorken(key)
-      if (!stork?.storage) { return }
-
-      const { storage } = stork
+      if (!storage) { return }
 
       storken.dispatchEvent('removingStorage')
 
