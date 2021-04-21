@@ -48,7 +48,7 @@ export const StorkenStorage = (storken, generalStorage) => {
 
       storken.dispatchEvent('removingStorage')
 
-      await storage.removeItem(stork.namespace + key)
+      await storage.removeItem(storken.namespace + key)
 
       storken.dispatchEvent('removedStorage')
 
