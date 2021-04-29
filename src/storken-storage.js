@@ -14,7 +14,7 @@ export const StorkenStorage = (storken, generalStorage) => {
           }
 
           storken.load(false)
-          storken.dispatchEvent('loadedStorage')
+          storken.dispatchEvent('loadedStorage', stored)
 
           if (stored) {
             stored = JSON.parse(stored)
