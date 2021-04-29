@@ -13,7 +13,6 @@ export const StorkenStorage = (storken, generalStorage) => {
             stored = await stored
           }
 
-          storken.load(false)
           storken.dispatchEvent('loadedStorage', stored)
 
           if (stored) {
@@ -22,6 +21,8 @@ export const StorkenStorage = (storken, generalStorage) => {
             storken.set(stored, { disableSetter: disableSetterOnStorage || true })
             storken.dispatchEvent('settedFromStorage', stored)
           }
+
+          storken.load(false)
 
           return stored
         }
