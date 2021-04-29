@@ -4,7 +4,6 @@ export const StorkenStorage = (storken, generalStorage) => {
 
   const Funcs = {
     setFromStorage: async () => {
-      if (!storage) { return }
       storken.load(true)
       storken.dispatchEvent('loadingStorage')
       try {
@@ -31,7 +30,6 @@ export const StorkenStorage = (storken, generalStorage) => {
       }
     },
     saveToStorage: async (value) => {
-      if (!storage) { return }
       storken.dispatchEvent('savingToStorage')
       const address = storken.namespace + storken.key
       const val = JSON.stringify(value)
@@ -44,8 +42,6 @@ export const StorkenStorage = (storken, generalStorage) => {
       }
     },
     clear: async (key, remove, reset = true) => {
-      if (!storage) { return }
-
       storken.dispatchEvent('removingStorage')
 
       await storage.removeItem(storken.namespace + key)
@@ -70,7 +66,7 @@ export const StorkenStorage = (storken, generalStorage) => {
     storken.setFromStorage()
   }
 
-  storken.addEventListener('set', (newValue) => {
+  storken.on('set', (newValue) => {
     if (storage) {
       storken.saveToStorage(newValue)
     }

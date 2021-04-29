@@ -1,6 +1,6 @@
 {
   "name": "storken-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "scripts": {
     "build": "babel src/storken-storage.js --ignore '**/*.test.js' --out-dir dist -d",
     "prepublishOnly": "yarn build"
