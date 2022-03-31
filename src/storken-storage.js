@@ -29,6 +29,8 @@ export const StorkenStorage = (storken, generalStorage) => {
       } catch (err) {
         console.warn('Storken: failed to set from storage', { value: storken.value, err })
       }
+
+      storken.load(false)
     },
     saveToStorage: async (value) => {
       storken.dispatchEvent('savingToStorage')
