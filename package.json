@@ -1,6 +1,6 @@
 {
   "name": "storken-storage",
-  "version": "1.0.9-beta.0",
+  "version": "1.0.9-ts.0",
   "scripts": {
     "prepublishOnly": "yarn build",
     "build": "yarn build:esm && yarn build:cjs",
